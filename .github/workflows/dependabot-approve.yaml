@@ -1,0 +1,10 @@
+name: Dependabot auto-merge
+on: pull_request
+
+jobs:
+  dependabot:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    uses: landlordhq/github-actions-workflows/.github/workflows/check-dependabot-pr.yaml@main
+    with:
+      level: automerge
+    secrets: inherit
